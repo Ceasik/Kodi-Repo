@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="repository.myrepo" name="My Custom Repository" version="1.0.0" provider-name="Developer">
+    <extension point="xbmc.addon.repository" name="My Custom Repository">
+        <dir>
+            <info compressed="false">https://ceasik.github.io/Kodi-Repo/addons.xml</info>
+            <checksum>https://ceasik.github.io/Kodi-Repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://ceasik.github.io/Kodi-Repo/zips</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>My Custom Kodi Repository</summary>
+        <description>A repository containing my custom add-ons.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+</addon>
+
+<addon id="plugin.video.myaddon" name="My Custom Video Add-on" version="1.0.0" provider-name="Developer">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests" version="2.22.0"/>
+        <import addon="script.module.beautifulsoup4" version="4.9.3"/>
+        <import addon="script.module.resolveurl" version="5.1.0"/>
+        <import addon="plugin.video.idanplus" version="3.9.9"/>
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">A custom video add-on</summary>
+        <description lang="en">This add-on provides access to legally free and public domain content.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
+
+﻿	<addon id="plugin.video.idanplus" name="עידן+ פלוס" version="3.9.9" provider-name="Fishenzon">
+		<requires>
+			<import addon="script.module.requests"/>
+			<import addon="script.module.xmltodict"/>
+			<import addon="inputstream.adaptive" optional="true"/>
+		</requires>
+		<extension point="xbmc.python.pluginsource" library="default.py">
+			<provides>video</provides>
+		</extension>
+		<extension point="xbmc.service" library="resources/lib/service.py" start="[login|startup]"/>
+		<extension library="resources/" point="xbmc.python.module" />
+		<extension library="resources/lib/" point="xbmc.python.module" />
+		<extension point="xbmc.addon.metadata">
+			<reuselanguageinvoker>true</reuselanguageinvoker>
+			<assets>
+				<icon>icon.png</icon>
+				<fanart>fanart.jpg</fanart>
+			</assets>
+			<platform>all</platform>
+			<summary lang="en">צפיה בערוצי עידן פלוס ובתכניות מהאתרים הרשמיים.</summary>
+			<description lang="en">צפיה בערוצי עידן פלוס ובתכניות מהאתרים הרשמיים.[CR]אפשרויות שונות בהגדרות ההרחבה ובקליק ימני על פריט ברשימה.</description>
+			<supportedcontent>
+				<content>tvshows</content>
+			</supportedcontent>
+		</extension>
+	</addon>
+
+</addons>
